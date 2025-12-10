@@ -1,0 +1,39 @@
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+
+.text-title {
+  text-align: center;
+}
+
+.bottom-space {
+  padding-bottom: 20px;
+}
+
+.gap {
+  gap: 10px;
+}
+.text-content {
+  border-top: 2px solid white;
+  display: flex;
+  flex-direction: row;
+  width:100%;
+  justify-content: center;
+  align-items: center;
+}
+.text-middle {
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+.google-button {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}

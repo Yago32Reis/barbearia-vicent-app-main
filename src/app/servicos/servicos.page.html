@@ -1,0 +1,51 @@
+<ion-content [fullscreen]="true">
+  <div class="logo-header ion-text-center">
+    <img src="assets/logo.png" alt="Barbearia Vicente Logo" class="app-logo">
+    <h2 class="welcome-message">Seja muito bem-vindo, Sr. João</h2>
+  </div>
+
+  <div class="page-title ion-padding-horizontal">
+    <h1 class="main-title">Serviços</h1>
+  </div>
+
+  <ion-list class="services-list">
+    <ion-item *ngFor="let service of services; let i = index" lines="none" class="service-item">
+      <ion-label>
+        <p class="service-name">{{ service.name }}</p>
+        <span class="service-price">{{ service.price | currency:'BRL':'symbol':'1.2-2' }}</span>
+      </ion-label>
+      <ion-checkbox 
+        slot="end"
+        color="dark" 
+        [checked]="service.selected"
+        (ionChange)="toggleServiceSelection(i)">
+      </ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar class="footer-toolbar">
+    <div class="footer-icons">
+      <a routerLink="/servicos" class="nav-item active">
+        <div class="icon-circle"><ion-icon name="cut-outline" class="menu-icon"></ion-icon></div>
+        <span>Serviços</span>
+      </a>
+      
+      <a routerLink="/planos" class="nav-item">
+        <div class="icon-circle"><ion-icon name="medal-outline" class="menu-icon"></ion-icon></div>
+        <span>Planos por Ass.</span>
+      </a>
+
+      <a routerLink="/localizacao" class="nav-item">
+        <div class="icon-circle"><ion-icon name="location-outline" class="menu-icon"></ion-icon></div>
+        <span>Localização</span>
+      </a>
+
+      <a routerLink="/agenda" class="nav-item">
+        <div class="icon-circle"><ion-icon name="calendar-outline" class="menu-icon"></ion-icon></div>
+        <span>Agenda</span>
+      </a>
+    </div>
+  </ion-toolbar>
+</ion-footer>
