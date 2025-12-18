@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
-import { RouterLink, Router } from '@angular/router'; // Adicionado Router aqui
+import { IonicModule, AlertController } from '@ionic/angular'; // Importado AlertController
+import { RouterLink, Router } from '@angular/router';
 
 interface Service {
   name: string;
@@ -18,6 +18,8 @@ interface Service {
   imports: [IonicModule, CommonModule, FormsModule, RouterLink, CurrencyPipe]
 })
 export class ServicosPage implements OnInit {
+
+ clienteNome: string = "João";
 
   services: Service[] = [
     { name: 'Corte Máquina (Um Pente)', price: 25.00, selected: false },
@@ -37,16 +39,34 @@ export class ServicosPage implements OnInit {
 
   totalPrice: number = 0;
 
-  // JUNÇÃO: Injetando o Router no construtor
-  constructor(private router: Router) { }
+  // Injetando Router e AlertController
+  constructor(
+    private router: Router,
+    private alertController: AlertController
+  ) { }
 
   ngOnInit() {
     this.calculateTotal(); 
   }
 
-  // JUNÇÃO: Função para navegar até a página de agenda
-  avancarParaAgenda() {
-    this.router.navigate(['/agenda']);
+  // LÓGICA ATUALIZADA AQUI
+  async avancarParaAgenda() {
+    // Verifica se algum serviço tem a propriedade 'selected' como true
+    const temServicoSelecionado = this.services.some(s => s.selected);
+
+    if (temServicoSelecionado) {
+      // Se tiver serviço, avança
+      this.router.navigate(['/agenda']);
+    } else {
+      // Se não tiver, mostra o alerta
+      const alert = await this.alertController.create({
+        header: 'Atenção',
+        message: `Sr. ${this.clienteNome}, por gentileza clique em um de nossos serviços para prosseguir.`,
+        buttons: ['OK']
+      });
+
+      await alert.present();
+    }
   }
 
   toggleServiceSelection(index: number) {
