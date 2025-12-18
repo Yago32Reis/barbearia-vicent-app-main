@@ -1,0 +1,7 @@
+{
+  "name": "Barbearia-Vicente-Angular",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

@@ -1,0 +1,32 @@
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+
+.text-title {
+  text-align: center;
+}
+
+.bottom-space {
+  padding-bottom: 20px;
+}
+
+.gap {
+  gap: 10px;
+}
+
+.register-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.back-button {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  padding: 5px;
+}

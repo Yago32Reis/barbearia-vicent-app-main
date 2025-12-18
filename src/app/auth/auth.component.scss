@@ -1,0 +1,60 @@
+// Centraliza tudo na tela
+ion-content {
+  --background: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+// AJUSTE DE LARGURA: Controla o tamanho do formulário
+.auth-container {
+  display: flex;
+  justify-content: center; // Centraliza horizontalmente
+  padding: 0 10px;
+
+  .login-card {
+    width: 100%;
+    max-width: 450px; // AQUI você define a largura máxima do formulário
+    background: #121212; // Fundo do card levemente mais claro
+    border-radius: 16px;
+    margin: 0;
+  }
+}
+
+// Estilização do Divisor "OU"
+.divider-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+
+  .line {
+    flex: 1;
+    height: 1px;
+    background: #444;
+  }
+
+  .divider-text {
+    margin: 0 10px;
+    color: #888;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+.text-title {
+  text-align: center;
+  color: white !important;
+}
+
+.google-button {
+  --background: #fff;
+  --color: #000;
+  font-weight: bold;
+}

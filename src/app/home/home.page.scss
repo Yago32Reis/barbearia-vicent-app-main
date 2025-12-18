@@ -1,0 +1,72 @@
+:root {
+  --ion-color-primary: #007bff; 
+  --ion-color-dark: #000;
+  --ion-color-light: #fff;
+}
+
+ion-content {
+  // Fundo totalmente preto
+  --background: #000; 
+  --padding-top: 0;
+}
+
+.logo-header {
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+
+.app-logo {
+  max-width: 250px; 
+  height: auto;
+  display: block; 
+  margin: 0 auto;
+}
+
+.welcome-title {
+  color: var(--ion-color-light);
+  font-size: 2.0rem;
+
+  // === CORREÇÃO: Texto Forte e Visível ===
+  color: #fff; // Branco puro
+  opacity: 1.0; // Opacidade total
+  // =======================================
+
+  font-weight: 200;
+  margin-top: 20px;
+}
+
+/* --- Menu Grid 2x2 --- */
+.menu-grid {
+  display: grid;
+  /* Cria 2 colunas que ocupam apenas o espaço necessário do ícone */
+  grid-template-columns: repeat(2, auto); 
+  /* Joga o bloco de ícones para o centro da tela */
+  justify-content: center; 
+  /* Espaçamento: 30px entre as linhas e 30px entre as colunas */
+  gap: 40px 105px; 
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  
+  // Garante que o texto fique branco e forte
+  color: #fff; 
+  opacity: 1.0; 
+  
+  font-size: 1.1rem;
+  font-weight: 500;
+  // Adiciona margem acima para separar do ícone
+  margin-top: 8px; 
+}
+
+.menu-icon {
+  // Ícone Preto (Tamanho Grande: 90px)
+  width: 90px;
+  height: 90px;
+  color: var(--ion-color-dark); 
+}

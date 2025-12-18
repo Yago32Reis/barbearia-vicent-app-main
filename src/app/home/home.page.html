@@ -1,0 +1,57 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background: #000;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/auth" text="" color="light"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title color="light">Início</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" color="danger">
+        <ion-label style="font-weight: bold; margin-right: 5px;">Sair</ion-label>
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <div class="logo-header ion-text-center">
+    <img src="assets/logo.png" alt="Barbearia Vicente Logo" class="app-logo">
+    <h1 class="welcome-title">Seja muito bem-vindo, Sr. João</h1>
+  </div>
+
+  <div class="menu-grid">
+
+    <a routerLink="/servicos" class="menu-item">
+      <div class="icon-circle">
+        <img src="assets/icon/icone-servicos.png" alt="Serviços" class="menu-icon">
+      </div>
+      <span>Serviços</span>
+    </a>
+
+    <a routerLink="/planos" class="menu-item">
+      <div class="icon-circle">
+        <img src="assets/icon/icone-planos.png" alt="Planos por Assinatura" class="menu-icon">
+      </div>
+      <span>Planos</span>
+    </a>
+
+    <a routerLink="/localizacao" class="menu-item">
+      <div class="icon-circle">
+        <img src="assets/icon/icone-localizacao.png" alt="Localização" class="menu-icon">
+      </div>
+      <span>Localização</span>
+    </a>
+
+    <a routerLink="/agenda" class="menu-item">
+      <div class="icon-circle">
+        <img src="assets/icon/icone-agenda.png" alt="Agenda" class="menu-icon">
+      </div>
+      <span>Agenda</span>
+    </a>
+
+  </div>
+
+</ion-content>

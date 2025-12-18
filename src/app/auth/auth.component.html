@@ -1,0 +1,48 @@
+<ion-content class="ion-padding">
+  
+  <div class="logo-container">
+    <app-image-component [props]="{
+        src: 'assets/logo.png',
+        alt: 'Barbearia do Vicente',
+        size:['250px', '250px']
+    }"/>
+  </div>
+
+  <div class="auth-container">
+    <ion-card class="login-card">
+      <ion-card-header>
+        <ion-card-subtitle class="text-title">Faça login para continuar</ion-card-subtitle>
+        <ion-card-title class="text-title">Bem-vindo</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item lines="full">
+          <ion-input [ngModel]="this.email" label="Email" labelPlacement="stacked" type="email" placeholder="seu@email.com"></ion-input>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-input [ngModel]="this.password" label="Senha" labelPlacement="stacked" type="password" placeholder="Digite sua senha"></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" class="ion-margin-top action-button" (click)="handleLogin()">
+          Entrar
+        </ion-button>
+
+        <ion-button expand="block" fill="clear" (click)="handleRegister()">
+          Criar conta
+        </ion-button>
+
+        <div class="divider-container">
+          <span class="line"></span>
+          <ion-text class="divider-text">OU</ion-text>
+          <span class="line"></span>
+        </div>
+
+        <ion-button expand="block" (click)="handleGoogleLogin()" class="google-button">
+          <ion-icon name="logo-google" slot="start"></ion-icon>
+          Entrar com o Google
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

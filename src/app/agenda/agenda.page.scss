@@ -1,0 +1,175 @@
+:root {
+  --ion-color-primary: #007bff;
+  --ion-color-dark: #000;
+  --ion-color-light: #fff;
+}
+
+ion-content {
+  --background: #000; 
+  --padding-bottom: 70px; 
+}
+
+/* --- Cabeçalho e Títulos --- */
+.logo-header {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.app-logo {
+  max-width: 150px; 
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.welcome-message {
+  color: #c9c9c9;
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.main-title {
+  color: var(--ion-color-light);
+  color: #fff; // Branco puro
+  opacity: 1.0; // Opacidade total
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* --- Calendário (ion-datetime) --- */
+
+.calendar-container {
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.custom-calendar {
+    // Fundo branco do calendário (conforme 9.jpg)
+    --background: var(--ion-color-light);
+    --color: var(--ion-color-dark);
+    --border-radius: 12px;
+    width: 100%;
+    max-width: 350px;
+    padding: 10px;
+}
+
+ion-datetime::part(calendar-day) {
+    color: var(--ion-color-dark);
+}
+ion-datetime::part(calendar-day-header) {
+    color: #555; 
+}
+
+ion-datetime::part(calendar-day-active) {
+    background: var(--ion-color-primary);
+    color: var(--ion-color-light);
+    font-weight: 600;
+}
+
+
+/* --- Seletor de Horário --- */
+.time-slot-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.time-label {
+    color: var(--ion-color-light);
+    color: #fff; // Branco puro
+    opacity: 1.0; // Opacidade total
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-right: 15px;
+}
+
+.time-picker-item {
+    --background: var(--ion-color-light);
+    --border-radius: 8px;
+    min-width: 120px;
+    padding: 0;
+    margin: 0;
+}
+
+.time-select-dropdown {
+    color: var(--ion-color-dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* --- Botão Agendar --- */
+.agendar-button {
+    --background: var(--ion-color-light);
+    --color: var(--ion-color-dark);
+    --border-radius: 30px;
+    height: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    max-width: 300px; 
+    margin: 0 auto; 
+    display: block; 
+}
+
+/* --- Barra de Navegação (Footer) --- */
+
+ion-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  --background: transparent; 
+}
+
+.footer-toolbar {
+  --background: #000;
+  padding: 0;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  background: #000; 
+  border-top: 1px solid #1a1a1a;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+.nav-item.active {
+  opacity: 1;
+  color: var(--ion-color-primary); 
+}
+
+.icon-circle {
+  width: 40px; 
+  height: 40px;
+  border-radius: 50%;
+  background: var(--ion-color-light); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2px;
+  box-shadow: none; 
+}
+
+.menu-icon {
+  width: 25px;
+  height: 25px;
+  color: var(--ion-color-dark); 
+}
