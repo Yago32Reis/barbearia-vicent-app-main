@@ -1,0 +1,74 @@
+<ion-content [fullscreen]="true">
+
+  <div class="logo-header ion-text-center">
+    <img src="assets/logo.png" alt="Barbearia Vicente Logo" class="app-logo">
+    <h2 class="welcome-message">BARBEARIA VICENTE</h2>
+  </div>
+
+  <div class="page-title ion-padding-horizontal">
+    <h1 class="main-title">Agenda</h1>
+  </div>
+
+  <div class="calendar-container ion-padding-horizontal">
+    <ion-datetime 
+      presentation="date" 
+      [value]="selectedDate" 
+      (ionChange)="onDateChange($event)"
+      locale="pt-BR"
+      class="custom-calendar">
+    </ion-datetime>
+  </div>
+
+  <div class="time-slot-container ion-padding-horizontal">
+    <p class="time-label">Horário:</p>
+    
+    <ion-item class="time-picker-item" lines="none">
+        <ion-select 
+            [(ngModel)]="selectedTime" 
+            placeholder="08:00"
+            interface="popover" 
+            class="time-select-dropdown">
+            
+            <ion-select-option *ngFor="let time of availableTimes" [value]="time">{{ time }}</ion-select-option>
+        </ion-select>
+    </ion-item>
+  </div>
+
+  <div class="ion-padding-horizontal">
+    <ion-button 
+      expand="block" 
+      class="agendar-button"
+      (click)="bookAppointment()"
+      [disabled]="availableTimes[0] === 'Fechado' || availableTimes.length === 0">
+      Agendar
+    </ion-button>
+  </div>
+  
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar class="footer-toolbar">
+    <div class="footer-icons">
+      
+      <a routerLink="/servicos" class="nav-item">
+        <div class="icon-circle"><ion-icon name="cut-outline" class="menu-icon"></ion-icon></div>
+        <span>Serviços</span>
+      </a>
+      
+      <a routerLink="/planos" class="nav-item">
+        <div class="icon-circle"><ion-icon name="medal-outline" class="menu-icon"></ion-icon></div>
+        <span>Planos por Ass.</span>
+      </a>
+
+      <a routerLink="/localizacao" class="nav-item">
+        <div class="icon-circle"><ion-icon name="location-outline" class="menu-icon"></ion-icon></div>
+        <span>Localização</span>
+      </a>
+
+      <a routerLink="/agenda" class="nav-item active">
+        <div class="icon-circle"><ion-icon name="calendar-outline" class="menu-icon"></ion-icon></div>
+        <span>Agenda</span>
+      </a>
+    </div>
+  </ion-toolbar>
+</ion-footer>
