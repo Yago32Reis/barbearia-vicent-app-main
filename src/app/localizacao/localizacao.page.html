@@ -1,5 +1,15 @@
-<ion-content [fullscreen]="true">
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background: #000000;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" text="" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color: #fff; font-size: 1rem; text-transform: uppercase;">
+      Barbearia Vicente
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
+<ion-content [fullscreen]="true">
   <div class="logo-header ion-text-center">
     <img src="assets/logo.png" alt="Barbearia Vicente Logo" class="app-logo">
     <h2 class="welcome-message">BARBEARIA VICENTE</h2>
@@ -23,7 +33,6 @@
     <p class="ref-title">Ponto de referência:</p>
     <p class="reference-point">Em frente ao condomínio Parque Brito I</p>
   </div>
-
 </ion-content>
 
 <ion-footer class="ion-no-border">
