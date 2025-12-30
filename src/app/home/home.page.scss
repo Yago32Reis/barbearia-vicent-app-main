@@ -36,13 +36,22 @@ ion-content {
 }
 
 /* --- Menu Grid 2x2 --- */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding-bottom: 50px; // Espaço para não bater no footer
+}
+
 .menu-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
-  // Centraliza o grid no meio da tela
-  justify-items: center; 
-  gap: 30px 10px;
-  padding: 0 10%;
+  grid-template-columns: repeat(2, 1fr); // 2 colunas
+  gap: 15px; // AQUI ESTÁ O SEGREDO: Diminuímos o espaço entre os botões
+  width: 100%;
+  max-width: 320px; // Mantém o menu centralizado e estreito
+  margin: 0 auto;
 }
 
 .menu-item {
@@ -50,7 +59,8 @@ ion-content {
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  
+  padding: 10px;
+
   // Garante que o texto fique branco e forte
   color: #fff; 
   opacity: 1.0; 
@@ -66,4 +76,55 @@ ion-content {
   width: 90px;
   height: 90px;
   color: var(--ion-color-dark); 
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding-bottom: 50px; // Espaço para não bater no footer
+}
+
+/* Container que agrupa os 4 ícones */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); // 2 colunas
+  gap: 15px; // AQUI ESTÁ O SEGREDO: Diminuímos o espaço entre os botões
+  width: 100%;
+  max-width: 320px; // Mantém o menu centralizado e estreito
+  margin: 0 auto;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px;
+
+  .icon-circle {
+    width: 80px; // Ícones da home são maiores que os do footer
+    height: 80px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    
+    img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+  }
+
+  span {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
 }
